@@ -20,7 +20,7 @@ The Laravel Stubs package provides pre-built Blade templates and PHP components 
 Add the package to your `composer.json`:
 
 ```bash
-composer require componist/laravel-stubs
+composer require componist/laravel-stubs --dev
 ```
 
 ## Usage
