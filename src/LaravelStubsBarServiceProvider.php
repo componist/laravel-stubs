@@ -6,7 +6,7 @@ namespace Componist\LaravelStubs;
 
 use Illuminate\Support\ServiceProvider;
 
-class DeveloperBarServiceProvider extends ServiceProvider
+class LaravelStubsBarServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -15,7 +15,7 @@ class DeveloperBarServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        
+        //
     }
     /**
      * Bootstrap services.
@@ -24,6 +24,13 @@ class DeveloperBarServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+        $this->publishes([
+            __DIR__.'/../stub/blade/site/page.blade.php' => resource_path('views/page/page.blade.php')
+        ], 'componist-page-stub');
+
+        $this->publishes([
+            __DIR__.'/../stub/blade/site/layout.blade.php' => resource_path('views/layouts/app.blade.php'),
+            __DIR__.'/../stub/php/site/layout.php' => app_path('View/AppLayout.php'),
+        ], 'componist-page-layout');
     }
 }
